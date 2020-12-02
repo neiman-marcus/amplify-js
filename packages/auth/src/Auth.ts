@@ -150,6 +150,7 @@ export class AuthClass {
 			identityPoolRegion,
 			clientMetadata,
 			endpoint,
+			fetchOptions,
 		} = this._config;
 
 		if (!this._config.storage) {
@@ -178,6 +179,7 @@ export class AuthClass {
 				UserPoolId: userPoolId,
 				ClientId: userPoolWebClientId,
 				endpoint,
+				fetchOptions,
 			};
 			userPoolData.Storage = this._storage;
 
@@ -1966,7 +1968,7 @@ export class AuthClass {
 						logger.debug('AWS credentials', credentials);
 					}
 
-					/* 
+					/*
 				Prior to the request we do sign the custom state along with the state we set. This check will verify
 				if there is a dash indicated when setting custom state from the request. If a dash is contained
 				then there is custom state present on the state string.

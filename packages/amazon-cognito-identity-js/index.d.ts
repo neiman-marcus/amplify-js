@@ -76,7 +76,7 @@ declare module 'amazon-cognito-identity-js' {
 		public setAuthenticationFlowType(
 			authenticationFlowType: string
 		): string;
-        public getCachedDeviceKeyAndPassword(): void;
+		public getCachedDeviceKeyAndPassword(): void;
 
 		public getSession(
 			callback:
@@ -310,6 +310,7 @@ declare module 'amazon-cognito-identity-js' {
 		endpoint?: string;
 		Storage?: ICognitoStorage;
 		AdvancedSecurityDataCollectionFlag?: boolean;
+		fetchOptions?: any;
 	}
 
 	export class CognitoUserPool {
